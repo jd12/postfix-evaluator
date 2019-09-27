@@ -56,7 +56,7 @@ After cloning this repository you want to run these commands
 
 ```
 cp pre-commit .git/hooks
-chmod -x .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
 
 These commands set up your repository so you don't accidentally commit to the master branch.
@@ -74,8 +74,6 @@ This will set up your commit template to automatically bring up the file to remi
 
 
 You should then go to Eclipse. File --> Import. Double-click on Gradle and then Existing Gradle Project. Click Browse next to Project Root Directory and find your folder and click Open. The project should pop up in the text box Projects. Click finish and you should be good to go!
-
-You should now have a project called postfix-evaluator-<your Github username> it is very important that you do not rename this project as it is used during the grading process. If the project is renamed, your assignment may not be graded.
 
 By default, your project should have no compiler errors and contain the following root items:
 
