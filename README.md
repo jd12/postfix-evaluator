@@ -56,7 +56,7 @@ After cloning this repository you want to run these commands
 
 ```
 cp pre-commit .git/hooks
-chmod -x .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
 
 These commands set up your repository so you don't accidentally commit to the master branch.
