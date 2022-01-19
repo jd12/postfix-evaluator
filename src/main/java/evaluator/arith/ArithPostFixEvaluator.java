@@ -1,6 +1,6 @@
 package evaluator.arith;
 
-import evaluator.PostFixEvaluator;
+import evaluator.Evaluator;
 import language.Operand;
 import parser.arith.ArithPostFixParser;
 import stack.StackInterface;
@@ -10,7 +10,7 @@ import stack.StackInterface;
  * An {@link ArithPostFixEvaluator} is a post fix evaluator over simple arithmetic expressions.
  *
  */
-public class ArithPostFixEvaluator implements PostFixEvaluator<Integer> {
+public class ArithPostFixEvaluator implements Evaluator<Integer> {
 
   private final StackInterface<Operand<Integer>> stack;
 

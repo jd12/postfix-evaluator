@@ -1,12 +1,12 @@
 package evaluator;
 
 /**
- * A {@code PostFixEvaluator} evaluates post fix expressions.
+ * An {@code Evaluator} evaluates post fix expressions.
  * @author jcollard, jddevaug
  *
  * @param <T> the type of result to be evaluated
  */
-public interface PostFixEvaluator<T> {
+public interface Evaluator<T> {
 
   /**
    * Evaluates the post fix expression and returns a value.

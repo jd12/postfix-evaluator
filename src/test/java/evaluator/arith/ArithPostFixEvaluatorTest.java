@@ -3,14 +3,14 @@ package evaluator.arith;
 import static org.junit.Assert.assertEquals;
 
 import evaluator.IllegalPostFixExpressionException;
-import evaluator.PostFixEvaluator;
+import evaluator.Evaluator;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class ArithPostFixEvaluatorTest {
 
-  private PostFixEvaluator<Integer> evaluator;
+  private Evaluator<Integer> evaluator;
 
   @Before
   public void setup() {
