@@ -32,7 +32,7 @@ public class PlusOperatorTest {
 
     Operand<Integer> result = operator.performOperation();
     int value = result.getValue();
-    assertEquals("Operator applied to 5 and 7 should produce 11.", 5 + 7,  value);
+    assertEquals("Operator applied to 5 and 7 should produce 12.", 5 + 7,  value);
   }
 
   @Test (timeout = 5000)
