@@ -9,10 +9,10 @@ For this assignment, you will be implementing a Post Fix Evaluator to perform ba
 **[Support Code API](#support-code-api)**<br>
 **[Part One: Importing Project into Eclipse](#part-one-importing-project-into-eclipse)**<br>
 **[Part Two: Implementing LinkedStack](#part-two-implementing-linkedstack)**<br>
-**[Part Three: Implement Arithmetic Operators](#part-three-implement-arithmetic-operators)**<br>
-**[Part Four: Implement a Postfix Arithmetic Evaluator](#part-four-implement-a-postfix-arithmetic-evaluator)**<br>
-**[Part Five: Commit Project and Submit Pull Request](#part-five-commit-project-and-submit-pull-request)**<br>
-**[Bonus: Infix Expression Evaluator](#bonus-infix-expression-evaluator)**<br>
+**[Part Three: Commit Project and Submit Pull Request](#part-three-commit-project-and-submit-pull-request)**<br>
+**[Part Four: Implement Arithmetic Operators](#part-four-implement-arithmetic-operators)**<br>
+**[Part Five: Implement a Postfix Arithmetic Evaluator](#part-five-implement-a-postfix-arithmetic-evaluator)**<br>
+**[Part Six: Infix Expression Evaluator](#part-six-infix-expression-evaluator)**<br>
 **[Additional Notes: Help for the project](#additional-notes)**<br>
 
 ## Book
@@ -54,24 +54,9 @@ Begin by cloning the provided project and importing it into your workspace.
 
 After cloning this repository you want to run these commands
 
-```
-cp pre-commit .git/hooks
-chmod +x .git/hooks/pre-commit
-```
-
-These commands set up your repository so you don't accidentally commit to the master branch.
-
 `git checkout -b development`
 
 This will create a branch named development and switch you to it. The development branch is where you will make all your commits.
-
-```
-cp git-commit-template.txt ~/.git-commit-template.txt
-git config --global commit.template ~/.git-commit-template.txt
-```
-
-This will set up your commit template to automatically bring up the file to remind you of the format you want.
-
 
 You should then go to Eclipse. File --> Import. Double-click on Gradle and then Existing Gradle Project. Click Browse next to Project Root Directory and find your folder and click Open. The project should pop up in the text box Projects. Click finish and you should be good to go!
 
@@ -88,11 +73,14 @@ If you are missing any of the above or errors are present in the project, seek h
 ## Part Two: Implementing LinkedStack
 You need to implement a basic stack data structure using a linked list data type internally to allow for an unbounded structure. Start by reading the comments in the `StackInterface` interface. It will provide you with some direction on what each method needs to do. Also, it will be helpful to review Chapter 3 to see how a stack works and Chapter 4 to see how to implement a stack using a linked structure.
 
-**Hint:** It might be useful to write a class called `Node<T>` that supports basic linked node operations. 
+**Hint:** You will need to write a class called `Node<T>` that supports basic linked node operations. 
 
-The test associated with the `LinkedStack` class **stack.LinkedStackTest** are in the test folder. You want to make sure you pass all of the tests provided. However, try and think of additional tests that might trip you up. Did you meet all of the requirements specified by the interface?
+The tests associated with the `LinkedStack` class **stack.LinkedStackTest** are in the test folder. You want to make sure you pass all of the tests provided. However, try and think of additional tests that might trip you up. Did you meet all of the requirements specified by the interface?
 
-## Part Three: Implement Arithmetic Operators
+## Part Three: Commit Project and Submit Pull Request 
+Make a commit with the commit message `feat: Complete LinkedStack` and push. Submit a pull request to the main repository and mark me as a reviewer so that I know your code is ready to be reviewed. Be sure to make a commit after each part of the project.
+
+## Part Four: Implement Arithmetic Operators
 Before you can even attempt to create a postfix evaluator, you will need to define what each of the possible postfix operators do. For this assignment, you are required to support addition, subtraction, multiplication, division and negation of integers. To help facilitate this, you have been provided with an `Operator<T>` interface. Take a moment to review the interface. 
 
 Now run the **operator.arith.PlusOperatorTest** test. All of the tests pass! Lucky you. Go ahead and open up the `PlusOperator` class and you will see an implementation. Review this implementation then complete the `SubOperator`, `DivOperator`, and `MultOperator` classes. Each time you implement something, be sure to run the associated tests to see how you’re doing. 
@@ -101,7 +89,7 @@ For the `DivOperator` you’ll have to override the `setOperand` method to throw
 
 Finally, you will need to implement the unary `NegateOperator` class. Negation is represented by the ‘!’ and flips the sign of the Operand. For example 5 ! would evaluate to -5 and -12 ! would evaluate to 12.  Although it is not required, it is recommended that you create an abstract class `UnaryOperator` based off of BinaryOperator first then extend it.
 
-## Part Four: Implement a Postfix Arithmetic Evaluator
+## Part Five: Implement a Postfix Arithmetic Evaluator
 Now that we have a stack and operators defined, it is time to create an evaluator. Open up the **evaluator.arith.ArithPostFixEvaluator** class and you will see four TODO comments.
 
 Before starting, check out the **evaluator.arith.ArithPostFixEvaluatorTest** class to see examples of how the evaluator is expected to be called and the results that are expected to be returned.
@@ -114,12 +102,8 @@ Third, determine what you will do when you see an `Operator`.
 
 Finally, determine what you will return.
 
-## Part Five: Commit Project and Submit Pull Request 
-When you have finished your solution and are ready to submit, make your final commit and push eveything up to Github. Submit a pull request to the main repository so that I know your code is ready to be reviewed.  
 
-
-
-## Bonus: Infix Expression Evaluator
+## Part Six: Infix Expression Evaluator
 
 
 Implement the following algorithm for the evaluation of arithmetic infix expressions. 
